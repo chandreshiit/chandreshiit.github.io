@@ -75,7 +75,7 @@ social:
   link: https://scholar.google.co.in/citations?user=OR0yLJEAAAAJ
 - icon: github
   icon_pack: fab
-  link: https://github.com/chandu8542
+  link: https://github.com/chandreshiit
 # - icon: external-link-alt
 #   icon_pack: fas
 #   link: https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ
