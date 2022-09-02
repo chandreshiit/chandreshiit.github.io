@@ -91,3 +91,21 @@ academic import --bibtex citations.bib --featured
 # To insert latex
 
 To insert latex using shortcodes {{<math>}}$$a+b$${{</math>}}
+
+# To update
+
+git add .
+
+git commit -m 'updated'
+
+git push
+
+then do 
+
+hugo
+
+cd public
+
+git add/commit/push
+
+see wowchemy for more info
