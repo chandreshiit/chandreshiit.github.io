@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Seemandhar Jain | AI Lab</title>
+    <link>https://chandreshiit.github.io/author/seemandhar-jain/</link>
+      <atom:link href="https://chandreshiit.github.io/author/seemandhar-jain/index.xml" rel="self" type="application/rss+xml" />
+    <description>Seemandhar Jain</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 01 Jan 2021 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://chandreshiit.github.io/images/logo.svg</url>
+      <title>Seemandhar Jain</title>
+      <link>https://chandreshiit.github.io/author/seemandhar-jain/</link>
+    </image>
+    
+    <item>
+      <title>Digital Contact Tracing for Covid 19</title>
+      <link>https://chandreshiit.github.io/publication/maurya-2021-digital/</link>
+      <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>https://chandreshiit.github.io/publication/maurya-2021-digital/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Large-Scale Contact Tracing, Hotspot Detection, and Safe Route Recommendation</title>
+      <link>https://chandreshiit.github.io/publication/maurya-2021-large/</link>
+      <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>https://chandreshiit.github.io/publication/maurya-2021-large/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

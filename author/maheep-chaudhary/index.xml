@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Maheep Chaudhary | AI Lab</title>
+    <link>https://chandreshiit.github.io/author/maheep-chaudhary/</link>
+      <atom:link href="https://chandreshiit.github.io/author/maheep-chaudhary/index.xml" rel="self" type="application/rss+xml" />
+    <description>Maheep Chaudhary</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sat, 01 Jan 2022 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://chandreshiit.github.io/images/logo.svg</url>
+      <title>Maheep Chaudhary</title>
+      <link>https://chandreshiit.github.io/author/maheep-chaudhary/</link>
+    </image>
+    
+    <item>
+      <title>An Intelligent Recommendation-cum-Reminder System</title>
+      <link>https://chandreshiit.github.io/publication/saxena-2022-intelligent/</link>
+      <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>https://chandreshiit.github.io/publication/saxena-2022-intelligent/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

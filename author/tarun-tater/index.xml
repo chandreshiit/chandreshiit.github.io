@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tarun Tater | AI Lab</title>
+    <link>https://chandreshiit.github.io/author/tarun-tater/</link>
+      <atom:link href="https://chandreshiit.github.io/author/tarun-tater/index.xml" rel="self" type="application/rss+xml" />
+    <description>Tarun Tater</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Thu, 05 May 2022 13:13:51 +0000</lastBuildDate>
+    <image>
+      <url>https://chandreshiit.github.io/images/logo.svg</url>
+      <title>Tarun Tater</title>
+      <link>https://chandreshiit.github.io/author/tarun-tater/</link>
+    </image>
+    
+    <item>
+      <title>Prediction of Late Payment of Invoices in Account Payable Business Process</title>
+      <link>https://chandreshiit.github.io/publication/taterprediction/</link>
+      <pubDate>Thu, 05 May 2022 13:13:51 +0000</pubDate>
+      <guid>https://chandreshiit.github.io/publication/taterprediction/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Prediction of invoice payment status in account payable business process</title>
+      <link>https://chandreshiit.github.io/publication/tater-2018-prediction/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>https://chandreshiit.github.io/publication/tater-2018-prediction/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

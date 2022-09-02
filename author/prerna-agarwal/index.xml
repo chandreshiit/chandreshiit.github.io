@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Prerna Agarwal | AI Lab</title>
+    <link>https://chandreshiit.github.io/author/prerna-agarwal/</link>
+      <atom:link href="https://chandreshiit.github.io/author/prerna-agarwal/index.xml" rel="self" type="application/rss+xml" />
+    <description>Prerna Agarwal</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 01 Jan 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://chandreshiit.github.io/images/logo.svg</url>
+      <title>Prerna Agarwal</title>
+      <link>https://chandreshiit.github.io/author/prerna-agarwal/</link>
+    </image>
+    
+    <item>
+      <title>Creative tagline generation framework for product advertisement</title>
+      <link>https://chandreshiit.github.io/publication/ray-2019-creative/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://chandreshiit.github.io/publication/ray-2019-creative/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

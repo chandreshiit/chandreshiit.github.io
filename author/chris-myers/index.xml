@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Chris Myers | AI Lab</title>
+    <link>https://chandreshiit.github.io/author/chris-myers/</link>
+      <atom:link href="https://chandreshiit.github.io/author/chris-myers/index.xml" rel="self" type="application/rss+xml" />
+    <description>Chris Myers</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 07 Sep 2020 10:03:07 -0300</lastBuildDate>
+    <image>
+      <url>https://chandreshiit.github.io/images/logo.svg</url>
+      <title>Chris Myers</title>
+      <link>https://chandreshiit.github.io/author/chris-myers/</link>
+    </image>
+    
+    <item>
+      <title>SBOL</title>
+      <link>https://chandreshiit.github.io/project/sbol/</link>
+      <pubDate>Mon, 07 Sep 2020 10:03:07 -0300</pubDate>
+      <guid>https://chandreshiit.github.io/project/sbol/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
