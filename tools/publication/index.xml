@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Publications | AI Lab</title>
+    <link>https://chandreshiit.github.io/publication/</link>
+      <atom:link href="https://chandreshiit.github.io/publication/index.xml" rel="self" type="application/rss+xml" />
+    <description>Publications</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Thu, 05 May 2022 13:13:51 +0000</lastBuildDate>
+    <image>
+      <url>https://chandreshiit.github.io/images/logo.svg</url>
+      <title>Publications</title>
+      <link>https://chandreshiit.github.io/publication/</link>
+    </image>
+    
+    <item>
+      <title>Prediction of Late Payment of Invoices in Account Payable Business Process</title>
+      <link>https://chandreshiit.github.io/publication/taterprediction/</link>
+      <pubDate>Thu, 05 May 2022 13:13:51 +0000</pubDate>
+      <guid>https://chandreshiit.github.io/publication/taterprediction/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>An Intelligent Recommendation-cum-Reminder System</title>
+      <link>https://chandreshiit.github.io/publication/saxena-2022-intelligent/</link>
+      <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>https://chandreshiit.github.io/publication/saxena-2022-intelligent/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Anomaly Detection in Big Data</title>
+      <link>https://chandreshiit.github.io/publication/maurya-2022-anomaly/</link>
+      <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>https://chandreshiit.github.io/publication/maurya-2022-anomaly/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>How Effective is Incongruity? Implications for Code-mix Sarcasm Detection</title>
+      <link>https://chandreshiit.github.io/publication/shah-2022-effective/</link>
+      <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>https://chandreshiit.github.io/publication/shah-2022-effective/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Approach for automatically adjusting display screen setting based on machine learning</title>
+      <link>https://chandreshiit.github.io/publication/malhotra-2021-approach/</link>
+      <pubDate>Thu, 01 Jul 2021 00:00:00 +0000</pubDate>
+      <guid>https://chandreshiit.github.io/publication/malhotra-2021-approach/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Digital Contact Tracing for Covid 19</title>
+      <link>https://chandreshiit.github.io/publication/maurya-2021-digital/</link>
+      <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>https://chandreshiit.github.io/publication/maurya-2021-digital/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>FiLMing Multimodal Sarcasm Detection with Attention</title>
+      <link>https://chandreshiit.github.io/publication/gupta-2021-filming/</link>
+      <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>https://chandreshiit.github.io/publication/gupta-2021-filming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Large-Scale Contact Tracing, Hotspot Detection, and Safe Route Recommendation</title>
+      <link>https://chandreshiit.github.io/publication/maurya-2021-large/</link>
+      <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>https://chandreshiit.github.io/publication/maurya-2021-large/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Online similarity learning with feedback for invoice line item matching</title>
+      <link>https://chandreshiit.github.io/publication/maurya-2020-online/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>https://chandreshiit.github.io/publication/maurya-2020-online/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Creative tagline generation framework for product advertisement</title>
+      <link>https://chandreshiit.github.io/publication/ray-2019-creative/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://chandreshiit.github.io/publication/ray-2019-creative/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Large-scale distributed sparse class-imbalance learning</title>
+      <link>https://chandreshiit.github.io/publication/maurya-2018-large/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>https://chandreshiit.github.io/publication/maurya-2018-large/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Prediction of invoice payment status in account payable business process</title>
+      <link>https://chandreshiit.github.io/publication/tater-2018-prediction/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>https://chandreshiit.github.io/publication/tater-2018-prediction/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Distributed Sparse Class-Imbalance Learning and its Applications</title>
+      <link>https://chandreshiit.github.io/publication/maurya-2017-distributed/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>https://chandreshiit.github.io/publication/maurya-2017-distributed/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Online sparse class imbalance learning on big data</title>
+      <link>https://chandreshiit.github.io/publication/maurya-2016250/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>https://chandreshiit.github.io/publication/maurya-2016250/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Online anomaly detection via class-imbalance learning</title>
+      <link>https://chandreshiit.github.io/publication/maurya-2015-online/</link>
+      <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
+      <guid>https://chandreshiit.github.io/publication/maurya-2015-online/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Anomaly detection in nuclear power plant data using support vector data description</title>
+      <link>https://chandreshiit.github.io/publication/maurya-2014-anomaly/</link>
+      <pubDate>Wed, 01 Jan 2014 00:00:00 +0000</pubDate>
+      <guid>https://chandreshiit.github.io/publication/maurya-2014-anomaly/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Fuzzy inference system for Internet traffic load forecasting</title>
+      <link>https://chandreshiit.github.io/publication/maurya-2012-fuzzy/</link>
+      <pubDate>Sun, 01 Jan 2012 00:00:00 +0000</pubDate>
+      <guid>https://chandreshiit.github.io/publication/maurya-2012-fuzzy/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

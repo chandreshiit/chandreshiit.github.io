@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nikhil Malhotra | AI Lab</title>
+    <link>https://chandreshiit.github.io/author/nikhil-malhotra/</link>
+      <atom:link href="https://chandreshiit.github.io/author/nikhil-malhotra/index.xml" rel="self" type="application/rss+xml" />
+    <description>Nikhil Malhotra</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Thu, 01 Jul 2021 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://chandreshiit.github.io/images/logo.svg</url>
+      <title>Nikhil Malhotra</title>
+      <link>https://chandreshiit.github.io/author/nikhil-malhotra/</link>
+    </image>
+    
+    <item>
+      <title>Approach for automatically adjusting display screen setting based on machine learning</title>
+      <link>https://chandreshiit.github.io/publication/malhotra-2021-approach/</link>
+      <pubDate>Thu, 01 Jul 2021 00:00:00 +0000</pubDate>
+      <guid>https://chandreshiit.github.io/publication/malhotra-2021-approach/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

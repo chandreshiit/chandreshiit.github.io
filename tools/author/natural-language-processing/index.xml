@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Natural Language Processing | AI Lab</title>
+    <link>https://chandreshiit.github.io/author/natural-language-processing/</link>
+      <atom:link href="https://chandreshiit.github.io/author/natural-language-processing/index.xml" rel="self" type="application/rss+xml" />
+    <description>Natural Language Processing</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language>
+    <image>
+      <url>https://chandreshiit.github.io/images/logo.svg</url>
+      <title>Natural Language Processing</title>
+      <link>https://chandreshiit.github.io/author/natural-language-processing/</link>
+    </image>
+    
+  </channel>
+</rss>
