@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nivedita Sethiya | AI Lab</title>
+    <link>https://chandreshiit.github.io/author/nivedita-sethiya/</link>
+      <atom:link href="https://chandreshiit.github.io/author/nivedita-sethiya/index.xml" rel="self" type="application/rss+xml" />
+    <description>Nivedita Sethiya</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language>
+    <image>
+      <url>https://chandreshiit.github.io/images/logo.svg</url>
+      <title>Nivedita Sethiya</title>
+      <link>https://chandreshiit.github.io/author/nivedita-sethiya/</link>
+    </image>
+    
+  </channel>
+</rss>
