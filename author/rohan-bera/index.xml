@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rohan Bera | AI Lab</title>
+    <link>https://chandreshiit.github.io/author/rohan-bera/</link>
+      <atom:link href="https://chandreshiit.github.io/author/rohan-bera/index.xml" rel="self" type="application/rss+xml" />
+    <description>Rohan Bera</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language>
+    <image>
+      <url>https://chandreshiit.github.io/images/logo.svg</url>
+      <title>Rohan Bera</title>
+      <link>https://chandreshiit.github.io/author/rohan-bera/</link>
+    </image>
+    
+  </channel>
+</rss>

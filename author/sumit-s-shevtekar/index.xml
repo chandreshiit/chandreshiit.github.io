@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sumit S Shevtekar | AI Lab</title>
+    <link>https://chandreshiit.github.io/author/sumit-s-shevtekar/</link>
+      <atom:link href="https://chandreshiit.github.io/author/sumit-s-shevtekar/index.xml" rel="self" type="application/rss+xml" />
+    <description>Sumit S Shevtekar</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language>
+    <image>
+      <url>https://chandreshiit.github.io/images/logo.svg</url>
+      <title>Sumit S Shevtekar</title>
+      <link>https://chandreshiit.github.io/author/sumit-s-shevtekar/</link>
+    </image>
+    
+  </channel>
+</rss>
