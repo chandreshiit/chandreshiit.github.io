@@ -1,4 +1,3 @@
-
 import os
 import re
 import json
@@ -38,6 +37,76 @@ def make_slug(first_author_last_name, year, title):
         candidate = f"{slug}-{n}"
         n += 1
     return candidate
+
+
+def clean_venue(venue, year=""):
+    """Tidy the venue string Scholar/SerpApi gives us.
+    SerpApi appends the year (and sometimes ', 0') to the venue, but the site
+    already shows the year separately, like '(2025).' in front of the title."""
+    v = (venue or "").strip()
+    y = str(year or "").strip()
+    if y:
+        v = re.sub(r",\s*" + re.escape(y) + r"\s*$", "", v)
+    v = re.sub(r",\s*0\s*$", "", v)
+    return v.strip(" ,")
+
+
+def normalize_title(title):
+    title = html.unescape(title or "").lower()
+    title = re.sub(r"[^a-z0-9 ]+", " ", title)
+    return re.sub(r"\s+", " ", title).strip()
+
+
+def title_similarity(a_norm, b_norm):
+    wa, wb = set(a_norm.split()), set(b_norm.split())
+    if not wa or not wb:
+        return 0.0
+    return len(wa & wb) / len(wa | wb)
+
+
+def load_local_titles():
+    """(slug, normalized_title) for every publication folder already on the site."""
+    titles = []
+    for name in sorted(os.listdir(PUBLICATION_DIR)):
+        if name.startswith("_"):
+            continue
+        bib_path = os.path.join(PUBLICATION_DIR, name, "cite.bib")
+        if not os.path.exists(bib_path):
+            continue
+        with open(bib_path, "r", encoding="utf-8") as f:
+            bib = f.read()
+        m = re.search(r"title\s*=\s*\{(.+)\}\s*,?\s*$", bib, re.IGNORECASE | re.MULTILINE)
+        if m:
+            titles.append((name, normalize_title(m.group(1))))
+    return titles
+
+
+def find_same_title(title, local_titles, threshold=0.9):
+    """Slug of an existing publication with (nearly) the same title, else None.
+    Guards against Scholar handing out a new citation_id for a paper we already have."""
+    norm = normalize_title(title)
+    best_slug, best_score = None, 0.0
+    for slug, local_norm in local_titles:
+        score = title_similarity(norm, local_norm)
+        if score > best_score:
+            best_slug, best_score = slug, score
+    return best_slug if best_score >= threshold else None
+
+
+CARD_SPLIT = re.compile(r'(?=<div class="grid-sizer col-lg-12 isotope-item)')
+
+
+def sort_cards_newest_first(block):
+    """Stable sort of the auto-generated cards by year, newest first."""
+    parts = CARD_SPLIT.split(block)
+    head, cards = parts[0], parts[1:]
+
+    def year_of(card):
+        m = re.search(r'year-(\d*)"', card)
+        return int(m.group(1)) if m and m.group(1) else 0
+
+    cards.sort(key=year_of, reverse=True)
+    return head + "".join(cards)
 
 
 def load_seen():
@@ -104,15 +173,15 @@ def build_fallback_bibtex(article):
     authors = article.get("authors", "")
     title = article.get("title", "")
     year = article.get("year", "")
+    venue = clean_venue(article.get("publication", ""), year).replace("&", r"\&")
     first_author_last = authors.split(",")[0].strip().split(" ")[-1] if authors else "unknown"
     key = f"{slugify(first_author_last)}{year}"
-    return (
-        f"@article{{{key},\n"
-        f" author = {{{authors}}},\n"
-        f" title = {{{title}}},\n"
-        f" year = {{{year}}}\n"
-        f"}}\n"
-    )
+    lines = [f"@article{{{key},", f" author = {{{authors}}},", f" title = {{{title}}},"]
+    if venue:
+        lines.append(f" journal = {{{venue}}},")
+    lines.append(f" year = {{{year}}}")
+    lines.append("}")
+    return "\n".join(lines) + "\n"
 
 
 def render_publication_page(slug, article):
@@ -123,7 +192,7 @@ def render_publication_page(slug, article):
     authors_raw = article.get("authors", "")
     author_names = [a.strip() for a in authors_raw.split(",") if a.strip()]
     year = article.get("year", "")
-    venue = article.get("publication", "")
+    venue = clean_venue(article.get("publication", ""), year)
     link = article.get("link", "")
 
     author_links_html = ", ".join(
@@ -169,8 +238,11 @@ def render_listing_card(slug, article):
     authors_raw = article.get("authors", "")
     author_names = [a.strip() for a in authors_raw.split(",") if a.strip()]
     year = article.get("year", "")
+    venue = clean_venue(article.get("publication", ""), year)
 
     author_spans = ", ".join(f"<span>{html.escape(n)}</span>" for n in author_names)
+    year_html = f"\n  ({year})." if year else "."
+    venue_html = f"\n  <em>{html.escape(venue)}</em>." if venue else ""
 
     return f"""
         <div class="grid-sizer col-lg-12 isotope-item pubtype-2 year-{year}">
@@ -179,9 +251,8 @@ def render_listing_card(slug, article):
 
   <span class="article-metadata li-cite-author">
   {author_spans}
-  </span>
-  ({year}).
-  <a href="/publication/{slug}/">{html.escape(title)}</a>.
+  </span>{year_html}
+  <a href="/publication/{slug}/">{html.escape(title)}</a>.{venue_html}
 
   <p>
 <button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
@@ -209,12 +280,8 @@ def insert_into_listing(new_cards_html):
     start_idx = content.index(MARKER_START) + len(MARKER_START)
     end_idx = content.index(MARKER_END)
     existing_between = content[start_idx:end_idx]
-    updated = (
-        content[:start_idx]
-        + existing_between
-        + new_cards_html
-        + content[end_idx:]
-    )
+    auto_block = sort_cards_newest_first(existing_between + new_cards_html)
+    updated = content[:start_idx] + auto_block + content[end_idx:]
 
     with open(LISTING_PATH, "w", encoding="utf-8") as f:
         f.write(updated)
@@ -229,17 +296,29 @@ def main():
     print(f"Found {len(articles)} total publications on Scholar.")
 
     seen = load_seen()
+    local_titles = load_local_titles()
     new_cards_html = ""
     added_count = 0
+    seen_changed = False
 
     for article in articles:
         citation_id = article.get("citation_id")
         if not citation_id:
             continue
         if citation_id in seen:
-            continue  
+            continue
 
         title = article.get("title", "Untitled")
+
+        # Scholar sometimes re-issues a citation_id for a paper we already have
+        # (e.g. author list reformatted). Same title => same paper => skip it.
+        existing_slug = find_same_title(title, local_titles)
+        if existing_slug:
+            print(f"Skipping '{title}' - already on site as publication/{existing_slug}/")
+            seen[citation_id] = existing_slug
+            seen_changed = True
+            continue
+
         authors_raw = article.get("authors", "")
         first_author_last = (
             authors_raw.split(",")[0].strip().split(" ")[-1] if authors_raw else "unknown"
@@ -252,25 +331,27 @@ def main():
 
         print(f"Adding new publication: {title} -> publication/{slug}/")
 
-        
         bibtex = fetch_bibtex(citation_id) or build_fallback_bibtex(article)
         with open(os.path.join(pub_folder, "cite.bib"), "w", encoding="utf-8") as f:
             f.write(bibtex)
 
-        
         page_html = render_publication_page(slug, article)
         with open(os.path.join(pub_folder, "index.html"), "w", encoding="utf-8") as f:
             f.write(page_html)
 
-        
         new_cards_html += render_listing_card(slug, article)
+        local_titles.append((slug, normalize_title(title)))
 
         seen[citation_id] = slug
         added_count += 1
+        seen_changed = True
 
     if added_count:
         insert_into_listing(new_cards_html)
+    if seen_changed:
         save_seen(seen)
+
+    if added_count:
         print(f"\nDone. Added {added_count} new publication(s).")
     else:
         print("\nNo new publications found. Nothing to do.")
