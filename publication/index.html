@@ -778,54 +778,96 @@
             
           </select>
         </div>
-        <div class="col-auto">
-          <select class="pub-filters form-control form-control-sm" data-filter-group="year">
-            <option value="*">Date</option>
-            
-            
-            
-            <option value=".year-2022">
-              2022
-            </option>
-            
-            <option value=".year-2021">
-              2021
-            </option>
-            
-            <option value=".year-2020">
-              2020
-            </option>
-            
-            <option value=".year-2019">
-              2019
-            </option>
-            
-            <option value=".year-2018">
-              2018
-            </option>
-            
-            <option value=".year-2017">
-              2017
-            </option>
-            
-            <option value=".year-2016">
-              2016
-            </option>
-            
-            <option value=".year-2015">
-              2015
-            </option>
-            
-            <option value=".year-2014">
-              2014
-            </option>
-            
-            <option value=".year-2012">
-              2012
-            </option>
-            
-            
+                <div class="col-auto">
+          <style>
+            .year-picker{position:relative;display:inline-block}
+            .year-picker-btn{width:auto !important;min-width:92px;text-align:left;cursor:pointer;padding-right:1.8rem !important;position:relative}
+            .year-picker-btn::after{content:"";position:absolute;right:10px;top:50%;margin-top:-2px;border:4px solid transparent;border-top-color:currentColor}
+            .year-picker-pop{position:absolute;top:calc(100% + 6px);left:0;z-index:50;width:232px;padding:10px;display:grid;grid-template-columns:repeat(4,1fr);gap:6px;background:#fff;border:1px solid rgba(0,0,0,0.15);border-radius:8px;box-shadow:0 6px 18px rgba(0,0,0,0.18)}
+            .year-picker-pop[hidden]{display:none}
+            .year-picker-pop button{border:1px solid rgba(0,0,0,0.12);background:transparent;color:#313131;border-radius:5px;padding:6px 0;font-size:0.82rem;cursor:pointer}
+            .year-picker-pop button:hover{border-color:#2962ff;color:#2962ff}
+            .year-picker-pop button.active{background:#2962ff;border-color:#2962ff;color:#fff}
+            .year-picker-pop .year-all{grid-column:1 / -1}
+            .dark .year-picker-pop{background:#282a36;border-color:#44475a;box-shadow:0 6px 18px rgba(0,0,0,0.5)}
+            .dark .year-picker-pop button{color:#f8f8f2;border-color:#44475a}
+            .dark .year-picker-pop button:hover{color:#8ab4ff;border-color:#8ab4ff}
+            .dark .year-picker-pop button.active{background:#2962ff;border-color:#2962ff;color:#fff}
+          </style>
+
+          <div class="year-picker">
+            <button type="button" class="form-control form-control-sm year-picker-btn" id="year-picker-btn" aria-haspopup="true" aria-expanded="false">Year</button>
+            <div class="year-picker-pop" id="year-picker-pop" hidden></div>
+          </div>
+
+          <!-- Hidden select: the theme's filter code reads this one. Don't delete it. -->
+          <select class="pub-filters" data-filter-group="year" hidden>
+            <option value="*">Year</option>
           </select>
+
+          <script>
+            /* Year picker: builds its years from the papers on this page (newest first),
+               so nothing needs updating by hand when a paper from a new year is added. */
+            document.addEventListener('DOMContentLoaded', function () {
+              var select = document.querySelector('select[data-filter-group="year"]');
+              var btn = document.getElementById('year-picker-btn');
+              var pop = document.getElementById('year-picker-pop');
+              if (!select || !btn || !pop) return;
+
+              var found = {};
+              document.querySelectorAll('#container-publications [class*="year-"]').forEach(function (el) {
+                var m = el.className.match(/(?:^|\s)year-(\d{4})(?:\s|$)/);
+                if (m) found[m[1]] = true;
+              });
+              var years = Object.keys(found).sort(function (a, b) { return b - a; });
+
+              function setOpen(open) {
+                pop.hidden = !open;
+                btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+              }
+
+              function choose(value, label, clicked) {
+                select.value = value;
+                btn.textContent = label;
+                pop.querySelectorAll('button').forEach(function (b) { b.classList.remove('active'); });
+                clicked.classList.add('active');
+                setOpen(false);
+                select.dispatchEvent(new Event('change', { bubbles: true }));
+              }
+
+              function addButton(text, value, extraClass) {
+                var b = document.createElement('button');
+                b.type = 'button';
+                b.textContent = text;
+                if (extraClass) b.className = extraClass;
+                b.addEventListener('click', function () {
+                  choose(value, value === '*' ? 'Year' : text, b);
+                });
+                pop.appendChild(b);
+                return b;
+              }
+
+              addButton('All years', '*', 'year-all active');
+              years.forEach(function (y) {
+                var opt = document.createElement('option');
+                opt.value = '.year-' + y;
+                opt.textContent = y;
+                select.appendChild(opt);
+                addButton(y, '.year-' + y);
+              });
+
+              btn.addEventListener('click', function (e) {
+                e.stopPropagation();
+                setOpen(pop.hidden);
+              });
+              document.addEventListener('click', function (e) {
+                if (!pop.contains(e.target)) setOpen(false);
+              });
+              document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') setOpen(false);
+              });
+            });
+          </script>
         </div>
       </div>
 
